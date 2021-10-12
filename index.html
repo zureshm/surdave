@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SURMARIO</title>
+<link rel="stylesheet" href="plain_css.css" type="text/css" />
+<script src="jquery.js"></script>
+<script src="TweenMax.min.js"></script>
+<script src="mar_js.js"></script>
+<script>
+$(document).ready(function(){
+	function preloadMyImages(){
+			var imageList = [
+				"actor.png",
+				"actor2.png",
+				"background1b.jpg",
+				"background.jpg",
+				"enemy1.png",
+				"castle_gate.png",
+				"background2.jpg",
+				"background2b.jpg",
+				"background3.jpg",
+				"background3b.jpg",
+				"bg_tile.png",
+				"bg_tile2.png",
+				"bg_tile2b.png",
+				"spider.png",
+				"pipe.png"
+			];
+			for(var i = 0; i < imageList.length; i++ ) 
+			{
+				var imageObject = new Image();
+				imageObject.src = imageList[i];
+			}
+		}
+		 preloadMyImages()
+})
+</script>
+</head>
+
+<body>
+
+
+
+<div id="container"><!--container starts-->
+	<div class="top_panel">
+		<div id="score_div">0</div>
+        <div id="life_div">4</div>
+        <div id="instruction_div">SUR MARIO</div>
+    </div>    
+    <!-- LEVEL 1 HTML-->  
+      <div class="start_screen">
+      	<div class="start_game_cover">
+        	<div class="startScreenMar"></div>
+            <div class="startScreenFlappy"></div>
+        	<a class="start_game">START</a>
+            <p>Level 1<br /><br />
+<span style="font-size:12px">Hint: Direction keys to walk; Up for Jump</span></p>
+        </div>
+      </div>
+      <div class="start_screen2">
+      	<div class="start_game_cover">
+        	<div class="startScreenMar2"></div>
+            <div class="startScreenSpider"></div>
+        	<a class="start_game2">START</a>
+            <p>Level 2<br /><br />
+<span style="font-size:12px">Hint: Beware of poison</span></p>
+        </div>
+      </div>
+      
+      <div class="start_screen3">
+      	<div class="start_game_cover">
+        	<div class="startScreenMar3"></div>
+            <div class="startScreenZombie"></div>
+        	<a class="start_game3">START</a>
+            <p>Level 3<br /><br />
+<span style="font-size:12px">Hint: Down arrow to fire!</span></p>
+        </div>
+      </div>
+      
+      <div class="start_screen4">
+      	<div class="start_game_cover">
+        	<div class="startScreenMar"></div>
+            <div class="startScreenTrophy"></div>
+        	<a class="start_game4">YOU WIN</a>
+            <p>Your Score :<span id="finalScore"></span></p>
+        </div>
+      </div>
+      
+        
+	<div class="level1_strip"><!--level1_strip strip-->
+    	<div class="bricks bricks1"><div class="tiles tile1"><div class='soul'></div></div></div>
+        <div class="bricks bricks2"><div class="tiles tile2"><div class='soul'></div></div></div>
+        <div class="bricks bricks3"><div class="tiles tile3"><div class='soul'></div></div></div>
+        <div class="bricks bricks4"><div class="tiles tile4"><div class='soul'></div></div></div>
+        <div class="bricks bricks5"><div class="tiles tile5"><div class='soul'></div></div></div>
+        <div class="bricks bricks6"><div class="tiles tile6"><div class='soul'></div></div></div>
+        
+     <div class="trophy"></div>   
+        
+    <div class="tiles floor_tile"><div class='soul'></div></div>
+    <div class="mar">    	
+    	<div class="mar_leg"></div>
+    </div>
+    <div class="enemy"></div> 
+    <div class="enemy2"></div>   
+    <div class="spike"></div>
+    <div class="spike2"></div>
+    <div class="spike3"></div>
+    <div class="spike4"></div>
+    
+    <div class="door"></div>
+    <div class="castle_gate"></div>
+    
+    <div class="coin coin1"></div>
+    <div class="coin coin2"></div>
+    <div class="coin coin3"></div>
+    <div class="coin coin4"></div>
+    <div class="coin coin5"></div>
+    <div class="coin coin6"></div>
+    <div class="coin coin7"></div>
+    <div class="coin coin8"></div>
+    <div class="coin coin9"></div>
+    <div class="coin coin10"></div>
+    
+    <div class="land_mask"></div>
+    </div><!--level1_strip strip ends------------------------------------------------------------------- -->
+    
+    
+    <div class="level2_strip"><!--level2_strip strip-->
+    	<div class="bricks_B bricks1_B"><div class="tiles_B tile1_B"><div class='soul_B'></div></div></div>
+        <div class="spike_B"></div>
+        <div class="bricks_B bricks2_B"><div class="tiles_B tile2_B"><div class='soul_B'></div></div></div>
+        <div class="bricks_B bricks3_B"><div class="tiles_B tile3_B"><div class='soul_B'></div></div></div>
+        <div class="spike2_B"></div>
+        
+        <div class="bricks_B bricks4_B"><div class="tiles_B tile4_B"><div class='soul_B'></div></div></div>
+        
+        <div class="bricks_B bricks5_B"><div class="tiles_B tile5_B"><div class='soul_B'></div></div></div>
+        <div class="bricks_B bricks6_B"><div class="tiles_B tile6_B"><div class='soul_B'></div></div></div>
+        
+        <div class="bricks_B bricks7_B"><div class="tiles_B tile7_B"><div class='soul_B'></div></div></div>
+        <div class="potion_green_B"></div>
+        <div class="bricks_B bricks8_B"><div class="tiles_B tile8_B"><div class='soul_B'></div></div></div>
+        
+     <div class="trophy_B"></div>   
+        
+    <div class="tiles_B floor_tile_B"><div class='soul_B'></div></div>
+    <div class="mar_B jumpready">
+    	<div class="mar_leg_B">
+        </div>
+    </div>
+    
+    <div class="enemy2_B"></div>
+    <div class="venom_B"></div>
+    <div class="enemy3_B"></div>
+    <div class="enemy4_B"></div>   
+    
+    
+    <div class="door_B"></div>
+    <div class="obstacle_B">
+    	<img src="box.png" width="63" height="70" />
+    	<div class="tiles_B obst_B">        
+        	<div class="soul_B"></div>
+        </div>
+    </div>
+    
+    <div class="coin_B coin1_B"></div>
+    <div class="coin_B coin2_B"></div>
+    <div class="coin_B coin3_B"></div>
+    <div class="coin_B coin4_B"></div>
+    <div class="coin_B coin5_B"></div>
+    <div class="coin_B coin6_B"></div>
+    <div class="coin_B coin7_B"></div>
+    <div class="coin_B coin8_B"></div>
+    <div class="coin_B coin9_B"></div>
+    <div class="coin_B coin10_B"></div>
+    
+    <div class="land_mask_B"></div>
+  </div><!--level2_strip strip ends-->
+    
+    
+    <div class="level3_strip"><!--level3_strip strip-->
+    	<div class="level3_scroll_strip"><!--level3_scroll_strip-->
+        	<div class="bricks_C bricks1_C"><!--a brick-->
+                <div class="tiles_C tile1_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            <div class="bricks_C bricks2_C"><!--a brick-->
+                <div class="tiles_C tile2_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            
+            <div class="bricks_C bricks3_C"><!--a brick-->
+                <div class="tiles_C tile3_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            
+            <div class="bricks_C bricks4_C"><!--a brick-->
+                <div class="tiles_C tile4_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            
+            <div class="bricks_C bricks5_C"><!--a brick-->
+                <div class="tiles_C tile5_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            
+            <div class="bricks_C bricks6_C"><!--a brick-->
+                <div class="tiles_C tile6_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            <div class="bricks_C bricks7_C"><!--a brick-->
+                <div class="tiles_C tile7_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            <div class="bricks_C bricks8_C"><!--a brick-->
+                <div class="tiles_C tile8_C">
+                    <div class='soul_C'></div>
+                </div>
+            </div><!--a brick ends-->
+            
+            <div class="potion_red_C"></div>
+            
+            
+            <div class="trophy_C"></div>
+            <div class="door_C"></div>
+            <div class="obstacle_C"><!--obstacle-->
+                <img src="box.png" width="63" height="70" />
+                <div class="tiles_C obst_C">        
+                    <div class="soul_C"></div>
+                </div>
+            </div><!--obstacle ends-->
+            <div class="obstacle2_C"></div>
+            
+            <div class="enemy2_C"></div>
+            <div class="enemy3_C"></div>
+            <div class="enemy4_C"></div>
+            <div class="enemy5_C"></div>
+            
+            <div class="tiles_C floor_tile_C"><div class='soul_C'></div></div>
+            <div class="lotus"></div>
+            <div class="lotus_ball"></div>
+            
+            <div class="coin_C coin1_C"></div>
+            <div class="coin_C coin2_C"></div>
+            <div class="coin_C coin3_C"></div>
+            <div class="coin_C coin4_C"></div>
+            <div class="coin_C coin5_C"></div>
+            <div class="coin_C coin6_C"></div>
+            <div class="coin_C coin7_C"></div>
+            <div class="coin_C coin8_C"></div>
+            <div class="coin_C coin9_C"></div>
+            <div class="coin_C coin10_C"></div>
+            
+        </div><!--level3_scroll_strip ends-->
+        <div class="lazer_C"></div>
+    	<div class="mar_C jumpready">
+                <div class="mar_leg_C">
+                </div>
+       </div>   
+        
+    	
+    
+      
+    
+    
+    	
+    
+    
+    	<div class="land_mask_C"></div>
+  </div><!--level3_strip strip ends-->
+
+    
+</div><!--container ends-->
+<div class="surconsole1"></div>
+<div class="surconsole2"></div>
+<audio loop  class="bgm" preload="auto" >    
+    	<source src="sounds/POL-tiny-hero-short.wav" type="audio/wav">
+</audio>
+<audio loop  class="bgm2" preload="auto" >    
+    	<source src="sounds/POL-mazy-jungle-short.wav" type="audio/wav">
+</audio>
+<audio loop  class="bgm3" preload="auto" >    
+    	<source src="sounds/POL-stealth-mode-short.wav" type="audio/wav">
+</audio>
+<audio  class="enemysound" preload="auto" >    
+    	<source src="sounds/NFF-lose.wav" type="audio/wav">
+</audio>
+<audio  class="coinsound" preload="auto" >    
+    	<source src="sounds/NFF-coin.wav" type="audio/wav">
+</audio>
+<audio  class="keysound" preload="auto" >    
+    	<source src="sounds/NFF-glocken-bad.wav" type="audio/wav">
+</audio>
+<audio  class="transformsound" preload="auto" >    
+    	<source src="sounds/transform.mp3" type="audio/wav">
+</audio>
+<audio  class="venomsound" preload="auto" >    
+    	<source src="sounds/venom.wav" type="audio/wav">
+</audio>
+<audio  class="lazersound"  preload="auto">    
+    	<source src="sounds/lazer.wav" type="audio/wav">
+</audio>
+<audio  class="doorsound" preload="auto" >    
+    	<source src="sounds/NFF-wobbling-shield.wav" type="audio/wav">
+</audio>
+<audio  class="zombiesound" preload="auto" >    
+    	<source src="sounds/NFF-ya-whoa.wav" type="audio/wav">
+</audio>
+<audio  class="completesound" preload="auto" >    
+    	<source src="sounds/NFF-carillon-a.wav" type="audio/wav">
+</audio>
+</body>
+</html>

@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0; padding:0; font-family: "comic sans ms", Courier, monospace; overflow:hidden}
+#container{width:1000px; height:650px; background:#f0f0f0; margin:auto; overflow:visible; position:relative}
+.top_panel{width:100%; height:50px; background:#000}
+#score_div{width:150px; height:50px; line-height:50px; background:black; color:gold; text-align:left; float:left; padding:0 20px; box-sizing:border-box}
+#life_div{width:250px; height:50px; float:right;line-height:50px; background:black; color:gold; text-align:right;padding:0 20px; box-sizing:border-box}
+#instruction_div{width:400px; height:50px; float:right;line-height:50px; background:black; color:gold; text-align:center; margin-right:80px; font-family:comic sans ms; font-size:30px}
+
+
+.start_screen{width:1000px; height:600px; background:#605951; position:absolute; z-index:999; top:50px}
+.start_game_cover{width:300px; height:200px; background:#000; border:1px solid #fff; box-shadow:3px 3px 3px #000; position:relative; margin:auto; top:200px}
+.start_game{color:gold; font-size:30px; cursor:pointer; font-family:"comic sans ms", Courier, monospace; display:block; text-align:center; position:relative; top:50px}
+.startScreenMar{width:48px; height:82px; background: url(actor.png); position:absolute; left:30px; top:40px; background-position:0 0; z-index:9 }
+.startScreenFlappy{width:60px; height:60px; background: url(enemy1.png); left:230px; top:50px; position:absolute; z-index:9}
+
+.start_game_cover p{font-size:16px; color:#fff; text-align:center; position:relative; display:block; top:50px}
+
+.start_screen2{width:1000px; height:600px; background:#605951; position:absolute; z-index:999; top:50px; display:none}
+.startScreenMar2{width:48px; height:82px; background: url(actor2.png); position:absolute; left:30px; top:40px; background-position:0 0; z-index:9 }
+.start_game2{color:gold; font-size:30px; cursor:pointer; font-family:"comic sans ms", Courier, monospace; display:block; text-align:center; position:relative; top:50px}
+.startScreenSpider{width:70px; height:94px; background: url(spider.png); left:230px; top:50px; position:absolute; z-index:9}
+
+.start_screen3{width:1000px; height:600px; background:#605951; position:absolute; z-index:999; top:50px; display:none}
+.startScreenMar3{width:48px; height:82px; background: url(actor3.png); position:absolute; left:30px; top:40px; background-position:0 0; z-index:9 }
+.start_game3{color:gold; font-size:30px; cursor:pointer; font-family:"comic sans ms", Courier, monospace; display:block; text-align:center; position:relative; top:50px}
+.startScreenZombie{width:70px; height:100px; background: url(zombie.png); left:230px; top:50px; position:absolute; z-index:9}
+
+.start_screen4{width:1000px; height:600px; background:#605951; position:absolute; z-index:999; top:50px; display:none}
+.startScreenTrophy{width:50px; height:67px; background: url(trophy.png); left:230px; top:50px; position:absolute; z-index:9}
+.start_game4{color:gold; font-size:30px; cursor:pointer; font-family:"comic sans ms", Courier, monospace; display:block; text-align:center; position:relative; top:50px}
+
+/*---------------level1---------*/
+.level1_strip{width:1000px; height:600px; position:absolute; left:0; top:50px; background:#d0d0d0 url(background.jpg); overflow:hidden}
+.mar{width:48px; height:82px; background: url(actor.png); position:absolute; left:10px; top:360px; background-position:0 0; z-index:9 }
+.mar_leg{width:35px; height:5px; left:5px; position:absolute; bottom:0; background:none }
+
+
+.enemy{width:60px; height:60px; position:absolute; left:100px; top:450px; background:url(enemy1.png) no-repeat; background-position:left 0 top 0}
+.enemy2{width:60px; height:60px; position:absolute; left:700px; top:240px; background:url(enemy1.png) no-repeat; background-position:left 0 top 0}
+.spike{width:58px; height:40px; background:url(spike.png); position:absolute; z-index:8; left:400px; top:535px }
+.spike2{width:58px; height:40px; background:url(spike.png); position:absolute; z-index:8; left:520px; top:535px }
+.spike3{width:58px; height:40px; background:url(spike.png); position:absolute; z-index:8; left:640px; top:535px }
+.spike4{width:58px; height:40px; background:url(spike.png); position:absolute; z-index:8; left:760px; top:535px }
+
+.bricks{width:70px; height:30px; background: url(bg_tile.png); position:absolute; line-height:30px; font-size:10px;}
+.bricks1{left:0px; top:440px;}
+.bricks2{left:240px; top:385px}
+.bricks3{left:320px; top:335px}
+.bricks4{left:500px; top:365px}
+.bricks5{left:340px; top:175px}/*top 165*/
+.bricks6{left:600px; top:165px}
+.trophy{width:50px; height:67px; background: url(trophy.png); left:330px; top:110px; position:absolute}/*top:100*/
+.door{width:40px; height:80px; background:none; left:950px; top:440px; position:absolute; z-index:2}
+.tiles{width:70px; height:10px; background:teal; position:absolute; left:0; top:0px; overflow:hidden; opacity:0}
+.tiles.floor_tile{width:100%; height:20px; position:absolute; top:510px; opacity:0}
+.soul{width:35px; height:10px; position:absolute; left:5px; top:0; background:red; color:gold; line-height:10px; font-size:9px; opacity:0}
+.land_mask{width:100%; height:85px; background: url(background1b.jpg); position:absolute; bottom:0; z-index:8}
+
+.castle_gate{width:172px; height:160px; background:url(castle_gate.png); position:absolute; left:905px; top:350px; z-index:1}
+
+.coin{width:28px; height:28px; background:url(coin.png); position:absolute;}
+.coin1{left:20px; top:300px}
+.coin2{left:220px; top:450px}
+.coin3{left:320px; top:450px}
+.coin4{left:420px; top:450px}
+.coin5{left:520px; top:450px}
+.coin6{left:620px; top:450px}
+.coin7{left:620px; top:300px}
+.coin8{left:620px; top:100px}
+.coin9{left:520px; top:100px}
+.coin10{left:420px; top:100px}
+
+/*level2 styles*/
+.level2_strip{width:1000px; height:600px; position:absolute; left:0; top:50px; background: url(background2.jpg); display:none; z-index:99; overflow:hidden}
+
+.mar_B{width:48px; height:82px; background: url(actor.png); position:absolute; left:10px; top:440px; background-position:0 0; z-index:9 }
+.mar_leg_B{width:35px; height:5px; left:5px; position:absolute; bottom:0; background:none }
+.mar_B.zombie{background-image:url(actor2.png)!important}
+
+.enemy2_B{width:70px; height:94px; position:absolute; left:860px; top:425px; background: url(spider.png) no-repeat; background-position:left 0 top 0; z-index:2}/*spider*/
+.venom_B{width:0px; height:5px; position:absolute; left:0; top:0; background:url(venom.png) no-repeat; background-size:contain; z-index:9}/*40px width*/
+.potion_green_B{width:25px; height:35px; background:url(potion_g.png) no-repeat; background-size:contain; position:absolute; left:770px; top:235px}
+
+.enemy3_B{width:50px; height:60px; position:absolute; left:550px; top:-25px; background: url(enemy.png) no-repeat; background-size:contain;  z-index:2}/*spike*/
+.enemy4_B{width:50px; height:60px; position:absolute; left:250px; top:-25px; background: url(enemy.png) no-repeat; background-size:contain; z-index:2}/*spike*/
+
+.spike_B{width:58px; height:30px; background:url(spike.png); position:absolute; z-index:8; left:760px; top:420px; z-index:0 }/**/
+.spike2_B{width:58px; height:30px; background:url(spike.png); position:absolute; z-index:8; left:350px; top:290px; z-index:0  }
+.spike3_B{width:58px; height:40px; background:url(spike.png); position:absolute; z-index:8; left:640px; top:535px }
+.spike4_B{width:58px; height:40px; background:url(spike.png); position:absolute; z-index:8; left:760px; top:535px }
+
+.bricks_B{width:77px; height:40px; background: url(bg_tile2.png); position:absolute; line-height:30px; font-size:10px;}
+.bricks1_B{left:750px; top:440px; z-index:1; background-image:url(bg_tile2b.png)}/**/
+.bricks2_B{left:230px; top:370px}
+.bricks3_B{left:340px; top:310px; z-index:1; background-image:url(bg_tile2b.png)}
+.bricks4_B{left:440px; top:220px; )}
+.bricks5_B{left:590px; top:220px}/*top 165*/
+.bricks6_B{left:10px; top:150px}
+.bricks7_B{left:750px; top:270px}
+.bricks8_B{left:750px; top:360px}
+.trophy_B{width:50px; height:67px; background: url(trophy.png); left:10px; top:85px; position:absolute}/*top:100*/
+.door_B{width:60px; height:100px; background: url(pipe.png); left:950px; top:420px; position:absolute; z-index:2}
+.tiles_B{width:70px; height:10px; background:teal; position:absolute; left:0; top:0px; overflow:hidden; opacity:0}
+.tiles_B.floor_tile_B{width:100%; height:20px; position:absolute; top:510px; opacity:0}
+.soul_B{width:35px; height:10px; position:absolute; left:5px; top:0; background:red; color:gold; line-height:10px; font-size:9px; opacity:0}
+.land_mask_B{width:100%; height:85px; background: url(background2b.jpg); position:absolute; bottom:0; z-index:8}
+
+
+.coin_B{width:28px; height:28px; background:url(coin.png); position:absolute;}
+.coin1_B{left:20px; top:300px}
+.coin2_B{left:220px; top:450px}
+.coin3_B{left:320px; top:450px}
+.coin4_B{left:420px; top:450px}
+.coin5_B{left:520px; top:450px}
+.coin6_B{left:620px; top:450px}
+.coin7_B{left:620px; top:300px}
+.coin8_B{left:620px; top:100px}
+.coin9_B{left:520px; top:100px}
+.coin10_B{left:420px; top:100px}
+
+.obstacle_B{width:63px; height:55px; background:none; position:absolute; left:100px; top:460px}
+.obstacle_B img{width:63px; position:absolute; top:-16px}
+.tiles_B.obst_B{width:100%; height:20px; background:teal; position:absolute; left:0; top:-10px; overflow:hidden; opacity:0}
+
+
+/*level3 styles*/
+.level3_strip{width:1000px; height:600px; position:absolute; left:0; top:50px; background:gold; display:none; z-index:99; overflow:hidden}
+.level3_scroll_strip{ position:absolute; width:3010px; height:600px; background: url(background3.jpg) repeat-x; left:0; top:0}
+
+.mar_C{width:48px; height:82px; background: url(actor.png); position:absolute; left:10px; top:440px; background-position:0 0; z-index:9 }
+.mar_leg_C{width:35px; height:5px; left:5px; position:absolute; bottom:0; background:none }
+.mar_C.cyclopse{background-image:url(actor3.png)!important; }
+
+
+
+.bricks_C{width:77px; height:40px; background: url(brick.png); position:absolute; line-height:30px; font-size:10px;}
+.bricks1_C{left:100px; top:440px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+.bricks2_C{left:250px; top:360px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+
+.bricks3_C{width:1500px; height:40px;left:400px; top:280px; z-index:1; background-image: url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+
+.bricks4_C{left:2600px; top:440px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+.bricks5_C{left:2450px; top:360px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+.bricks6_C{left:2300px; top:280px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+.bricks7_C{left:2150px; top:200px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+.bricks8_C{left:2000px; top:120px; z-index:1; background-image:url(background3b.jpg); border:1px solid #000; border-top:0; border-bottom:0}
+
+.potion_red_C{width:25px; height:35px; background:url(potion_red.png) no-repeat; background-size:contain; position:absolute; left:2000px; top:85px; z-index:2}/*left:200px; top:385px;*/
+
+
+.trophy_C{width:50px; height:67px; background: url(trophy.png); left:1750px; top:220px; position:absolute;}/*top:100*/
+.door_C{width:60px; height:100px; background: url(pipe.png); left:2950px; top:420px; position:absolute; z-index:2}
+.tiles_C{width:100%; height:10px; background:teal; position:absolute; left:0; top:0px; overflow:hidden; opacity:0}
+.tiles_C.floor_tile_C{width:100%; height:20px; position:absolute; top:510px; opacity:0}
+.soul_C{width:35px; height:10px; position:absolute; left:5px; top:0; background:red; color:gold; line-height:10px; font-size:9px; opacity:0}
+.land_mask_C{width:3000px; height:85px; background: url(background3b.jpg); position:absolute; bottom:0; left:0; z-index:2}
+
+.enemy2_C{width:70px; height:100px; position:absolute; left:1700px; top:190px; background: url(zombie.png) no-repeat; background-position:left 0 top 0; z-index:3}/*zombie*/
+.enemy3_C{width:60px; height:60px; position:absolute; left:2540px; top:140px; background:url(enemy1.png) no-repeat; background-position:left 0 top 0; z-index:3}/*flappy*/
+.enemy4_C{width:60px; height:60px; position:absolute; left:2390px; top:110px; background:url(enemy1.png) no-repeat; background-position:left 0 top 0; z-index:3}
+
+.enemy5_C{width:60px; height:60px; position:absolute; left:830px; top:460px; background:url(wheel.png) no-repeat; background-position:left 0 top 0}
+
+
+
+
+.obstacle_C{width:63px; height:55px; background:none; position:absolute; left:750px; top:460px}
+.obstacle_C img{width:63px; position:absolute; top:-16px}
+.tiles_C.obst_C{width:100%; height:20px; background:teal; position:absolute; left:0; top:-10px; overflow:hidden; opacity:0}
+
+.obstacle2_C{width:60px; height:280px; background: url(brick0.png) ; position:absolute; left:1840px; top:0px; border:1px solid #000}
+.lazer_C{width:150px; height:8px; background:url(lazer.png)  center; background-size:contain; position:absolute; left:0; top:-10px; z-index:999}
+.lotus{width:132px; height:70px; top:-10px; left:590px; position:absolute; z-index:9; background:url(lotus.png)}
+.lotus_ball{width:40px; height:40px; position:absolute; left:635px; top:10px; z-index:8; background:url(seed.png)}
+
+.coin_C{width:28px; height:28px; background:url(coin.png); position:absolute;}
+.coin1_C{left:700px; top:100px}
+.coin2_C{left:800px; top:100px}
+.coin3_C{left:900px; top:100px}
+.coin4_C{left:1000px; top:100px}
+.coin5_C{left:1100px; top:100px}
+.coin6_C{left:1200px; top:100px}
+.coin7_C{left:1300px; top:100px}
+.coin8_C{left:1400px; top:100px}
+.coin9_C{left:1500px; top:100px}
+.coin10_C{left:1600px; top:100px}
+
+/*test purpose*/
+.red{background:#8080ff}
+.green{background:lime}
+.green .soul{background:#000}
+
