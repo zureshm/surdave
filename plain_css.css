@@ -2,11 +2,20 @@
 /* CSS Document */
 body{margin:0; padding:0; font-family: "comic sans ms", Courier, monospace; overflow:hidden}
 #container{width:1000px; height:650px; background:#f0f0f0; margin:auto; overflow:visible; position:relative}
-.top_panel{width:100%; height:50px; background:#000}
+.top_panel{width:100%; height:50px; background:#000; position: relative; z-index: 1000;}
 #score_div{width:150px; height:50px; line-height:50px; background:black; color:gold; text-align:left; float:left; padding:0 20px; box-sizing:border-box}
-#life_div{width:250px; height:50px; float:right;line-height:50px; background:black; color:gold; text-align:right;padding:0 20px; box-sizing:border-box}
+#life_div{width:250px; height:50px; position: relative; right:40px;
+     float:right;line-height:50px; background:black; color:gold; text-align:right;padding:0 20px; box-sizing:border-box}
 #instruction_div{width:400px; height:50px; float:right;line-height:50px; background:black; color:gold; text-align:center; margin-right:80px; font-family:comic sans ms; font-size:30px}
-
+#help_icon{position: absolute; right:12px; top:12px; width:24px; height:24px; background:gold; color:#000; justify-content: 
+    center; align-items: center; display: flex; border-radius: 100px; cursor: pointer;}
+.help_div{width:300px; height:300px; background:#fff; border:1px solid #666;
+padding:10px; font-size: 16px; position: absolute; right:12px; top:40px; z-index: 999; box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+display: none;
+}
+.help_div ul{margin: 10px; padding: 10px;}
+.help_div ul li{padding:10px 0; margin:0;}
+#help_icon:hover~.help_div{display: block;}
 
 .start_screen{width:1000px; height:600px; background:#605951; position:absolute; z-index:999; top:50px}
 .start_game_cover{width:300px; height:200px; background:#000; border:1px solid #fff; box-shadow:3px 3px 3px #000; position:relative; margin:auto; top:200px}
